@@ -14,7 +14,7 @@ app.get('/', async (req, res) => {
 
 app.get('/hello', async (req, res) => {
   console.log("Hello World")
-  res.send("Hello World!")
+  res.send("Hello World!!")
 });
 
 function test(){
