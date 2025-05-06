@@ -1,0 +1,50 @@
+{
+    "taskGroups": [
+        {
+            "taskSpec": {
+                "runnables": [
+                    {
+                        "script": {
+                            "text": "sh /mnt/disks/skill-mining-temp-1731695255/config_vm.sh"}, "environment":{
+                                "variables": {
+                                    "INPUT_URI": "skill-mining-temp-1731695255/raw/input",
+                                    "OUTPUT_URI": "skill-mining-temp-1731695255/processed/output",
+                                    "START_JSONL": "0",
+                                    "BUCKET": "skill-mining-temp-1731695255",
+                                    "MODEL": "gs://production-onementor-ml-models/skill-extractor/en_skill_lg_0.4/model-best/*"
+                                }
+                            }
+                        }
+                    ],
+                    "volumes": [
+                        {
+                            "gcs": {
+                                "remotePath": "skill-mining-temp-1731695255"
+                            },
+                            "mountPath": "mnt/disks/skill-mining-temp-1731695255"
+                        }
+                    ],
+                    "computeResource": {
+                        "cpuMilli": "64000",
+                        "memoryMib": "240000"
+                    },
+                    "maxRetryCount": 0,
+                    "maxRunDuration": "7200s"
+                },
+                "taskCount": "1",
+                "parallelism": 1
+            }
+        ],
+        "allocationPolicy": {
+            "instances": [
+                {
+                    "policy": {
+                        "machineType": "n1-standard-64"
+                    }
+                }
+            ]
+        },
+        "logsPolicy": {
+            "destination": "CLOUD_LOGGING"
+        }
+    }

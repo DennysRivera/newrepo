@@ -1,0 +1,22 @@
+#steps:
+#- name: 'bash'
+#  args: ['echo', 'I am running in a private pool!']
+#options:
+#  pool:
+#    name: 'projects/dennysp-dev/locations/us-west1/workerPools/testpool2'
+
+runtime: nodejs22
+env: standard
+runtime_config:
+  operating_system: ubuntu22
+# This sample incurs costs to run on the App Engine flexible environment.
+# The settings below are to reduce costs during testing and are not appropriate
+# for production use. For more information, see:
+# https://cloud.google.com/appengine/docs/flexible/nodejs/configuring-your-app-with-app-yaml
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
+service: default

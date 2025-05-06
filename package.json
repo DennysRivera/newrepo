@@ -1,0 +1,19 @@
+{
+    "name": "serverless_challenge1",
+    "description": "First challenge for Serverless",
+    "version": "1.0.0",
+    "private": true,
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "engines": {
+      "node": ">=20.0.0"
+    },
+    "author": "dennysp",
+    "license": "MIT",
+    "dependencies": {
+      "express": "^4.21.0"
+    }
+  }
